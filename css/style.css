@@ -21,30 +21,31 @@ html {
 
 .wrapper {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     
 }
 
 .header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
     flex-flow: row nowrap;
     background-color: #ffffff;
-    width: 320px;
     height: 88px;
-    padding: 24px 16px;
+    flex: 1 1 320px;
 }
 
+
+
 .header__round {
-    min-width: 40px;
+    width: 40px;
     height: 40px;
     background: #FF3E79;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     
 }
 .header__list li {
@@ -57,30 +58,30 @@ html {
 }
 .header__main, .header__services {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 0 1 auto;
+    gap: 24px 16px;
 }
 
 button {
     margin: 0;
     padding: 0;
 }
-.header .header__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 24px 8px;
+.header__button { 
     outline: none;
     background: none;
     border: none;
     text-decoration: none;
 
 }
-
-
 .header__button:first-child {
     margin-left: 0;
 }
 
+.header__button:last-child {
+    margin-right: 0;
+}
 .services {
     display: flex;
     flex-flow: column wrap;
@@ -88,15 +89,13 @@ button {
     align-items: flex-start;
     align-content: flex-start;
     background-color: #f8f8f8;
-    position: relative;
 }
 
-.services__section {
-    display: flex;
-    flex-flow: column wrap;
-    padding: 24px 16px;
+.services__title {
     position: relative;
+    padding: 24px 16px;
 }
+
 
 .services__highlight {
     position: absolute;
@@ -106,7 +105,7 @@ button {
     background: #41F6D7;
     transform: matrix(-1, 0, 0, 1, 0, 0);
 }
-.services__title {
+.services__maintitle {
     font-weight: 900;
     font-size: 28px;
     line-height: 40px;
@@ -116,9 +115,8 @@ button {
 
 .services__menu {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    flex: row nowrap;
+    justify-content: flex-start;
     align-items: center;
 
     overflow-x: auto;
@@ -136,12 +134,17 @@ button {
     letter-spacing: -0.2px;
     color: #7E7E82;
     margin: 24px 12px;
+    padding: 8px 16px;
     background: #FFFFFF;
     border: 2px solid #B8FFEC;
     border-radius: 6px;
 
    /*  transform: matrix(-1, 0, 0, 1, 0, 0); */
 
+}
+
+.services__button:first-child {
+    margin-left: 0;
 }
 
 
@@ -152,6 +155,10 @@ button {
 
 .services__button a:link {
     color: #7E7E82;
+    outline: none;
+    background: none;
+    border: none;
+    text-decoration: none;
     
   }
   
