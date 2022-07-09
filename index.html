@@ -7,92 +7,84 @@
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/style.css">
     
-    <title>Document</title>
+    <title>CPSdesign</title>
 </head>
 <body>
-    
-    <div class="wrapper">
-        <header class="header">
-            <div class="header__main">
-                <button class="header__burger header__button">
-                    <div class="header__round">
-                        <img src="/icons/burder_icon.svg" alt="">
-                    </div>
-                </button>
-                    <div class="header__logo header__button">
-                            <img src="/icons/logo.svg" alt="Логотип">
-    
-                    </div>
-            </div>
-            
-            <div class="header__services">
-                <div class="header__divider header__button">
+    <header class="header">
+        <div class="header__menu">
 
-                    <img src="/icons/divider.svg" alt="Разделитель">
-    
+            <div class="header__main-box">
+                <div class="header__icon icon">
+                    <div class="header__round">
+                        <img src="/icons/burder_icon.svg" alt="Бургерное меню">
+                    </div>
                 </div>
-                <button class="header__repair header__button">
+                <div class="header__icon logo">
                     <div class="header__round">
-                        <img src="/icons/repair_icon.svg" alt="">
+                        <img src="/icons/logo.svg" alt="Логотип">
                     </div>
-                </button>
-                <button class="header__checkstatus header__button">
-                    <div class="header__round">
-                        <img src="/icons/checkstatus_icon.svg" alt="">
-                    </div>
-                </button>
+                </div>
             </div>
-            <!-- <nav class="header__menu">
-                <ul class="header__list">
-                    <li>
-                        <a href="#" class="header__link">Ремонт техники</a>
-                    </li>
-                    <li>
-                        <a href="#" class="header__link">Услуги и сервисы</a>
-                    </li>
-                    <li>
-                        <a href="#" class="header__link">Корпоративным клиентам</a>
-                    </li>
-                </ul>
-            </nav> -->
-        </header>
 
-            <div class="divider"></div>
-
-        <div class="services">
-                    <div class="services__title">
-                        <div class="services__highlight">
-                            <img src="/icons/highlight.svg" alt="">
-                        </div>
-                        <div class="services__maintitle">Услуги и сервисы</div>
-    
+            <div class="header__sub-box">
+                <div class="header__divider">
+                    <img src="/icons/divider.svg" alt="Разделитель">
+                </div>
+                <div class="header__icon icon">
+                    <div class="header__round">
+                        <img src="/icons/repair_icon.svg" alt="Сервис">
                     </div>
-
-                    <nav class="services__menu">
-                        <button class="services__button button">
-                            <a href="#">Ремонтируемые бренды</a>
-                        <button class="services__button button">
-                            <a href="#">Ремонтируемые устройства</a>
-                        </button>
-                        <button class="services__button button">
-                            <a href="#">Дополнительные услуги</a>
-                        </button>
-                        <button class="services__button button">
-                            <a href="#">Цены на услуги</a>
-                        </button>
-                        <button class="services__button button">
-                            <a href="#">Адреса сервисных центров</a>
-                        </button>
-                    </nav>
-                    <div class="services__text">
-                        <div class="services__item">
-                            Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.
-                        </div>
+                </div>
+                <div class="header__icon icon">
+                    <div class="header__round">
+                        <img src="/icons/checkstatus_icon.svg" alt="Статус">
                     </div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="services__picture">
-                        <img src="/icons/_MG_3223.png" alt="">
-                    </div>
-    </div>
+    </header>
+    <div class="divider"></div>
+    <main class="main">
+        <div class="main__container">
+            <div class="main__title">
+                Услуги и сервисы
+            </div>
+            <div class="main__highlight">
+                <img src="/icons/highlight.svg" alt="Highlight">
+            </div>
+
+            <nav class="menu">
+                <div class="main__slide-menu">
+                    <a href="#" class="main__button main__button--active">Ремонтируемые устройства</a>
+                    <a href="#" class="main__button">Дополнительные услуги</a>
+                    <a href="#" class="main__button">Цены на услуги</a>
+                    <a href="#" class="main__button">Адреса сервисных центров</a>
+                    <a href="#" class="main__button">Специальные цены</a>
+                    <a href="#" class="main__button">Отзывы</a>
+                    <div class="main__fade"></div>
+                </div>
+            </nav>
+            <div class="main__description">
+                <input type="checkbox" id="read-more" class="read-more"/>
+
+                <div class="main__text">
+                    Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.
+                    <div class="show-more">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.</div>
+                </div>
+                <div class="main__read-more">
+                    <label for="read-more">
+                        <img src="/icons/expand.svg" alt="">
+                    Читать далее
+                    </label>
+                </div>
+                
+            </div>
+            <div class="main__image">
+                    <img src="/icons/_MG_3223.png" alt="">
+            </div>
+        </div>
+    </main>
 </body>
 </html>
+
