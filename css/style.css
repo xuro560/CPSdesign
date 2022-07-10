@@ -32,6 +32,9 @@
         .main__container {
             padding: 24px 16px;
         }
+        .main__read-more {
+            margin-bottom: 24px;
+        }
 
         .main__container .main__title > .main__sidebar {
             display: none;
