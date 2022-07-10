@@ -52,7 +52,7 @@
         }
     }
 
-    @media (min-width: 768px) and (max-width: 1119px) {
+    @media (min-width: 768px) and (max-width: 1120px) {
         .header {
             width: 100%;
         }
@@ -261,7 +261,6 @@
         display: flex;
         gap: 24px 16px;
         flex: 1 1 auto;
-        margin-bottom: 24px;
     }
 
     .main__text .show-more {
