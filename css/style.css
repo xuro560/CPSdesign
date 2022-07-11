@@ -2,6 +2,8 @@
     @import url(css/fonts.css);
     * {
         font-size: 16px;
+        padding: 0;
+        margin: 0;
     }
     *, *:before, *:after {
         box-sizing: inherit;
@@ -10,16 +12,32 @@
     html {
         font-family: 'TT Lakes', sans-serif;
         box-sizing: border-box;
+        height: 100%;
+        overflow: hidden;
     }
     
     body {
-        width: 100%;
-        height: auto;
+        background: #f2f2f2;
+        min-height: 100%;
+        background: blue;
+        overflow: hidden;
+    }
+    .page {
+        max-width: 1120px;
+        margin: 0 auto;
+        background: #f8f8f8;
+        display: flex;
+        justify-content: center;
+        flex-flow: column wrap;
     }
 
     @media (min-width: 320px) and (max-width: 767px) {
-        
-        .header {
+
+        html, body {
+            width: 100%;
+            
+        }
+        .page, .page > * {
             width: 100%;
         }
         .header__sub-box .header__second-box {
@@ -28,22 +46,28 @@
         .header__main-box .header__divider {
             display: none;
         }
-
         .main__container {
             padding: 24px 16px;
         }
-
+        .section__read-more {
+            margin-bottom: 24px;
+        }
         .main__container .main__title > .main__sidebar {
             display: none;
         }
-        .main__description {
+        .section {
             flex-flow: column wrap;
             width: 100%;
         }
-        .main__text {
+        .section__text {
             width: 100%;
         }
-
+        .menu__slider {     
+            overflow-x: scroll;
+            overflow-y: none;
+            scrollbar-width: none;
+            margin-right: -16px;
+        }
         .menu {
             width: 100%;
         }
@@ -53,7 +77,7 @@
     }
 
     @media (min-width: 768px) and (max-width: 1120px) {
-        .header {
+        .page, .page > * {
             width: 100%;
         }
         .header__second-box {
@@ -66,7 +90,7 @@
             align-items: flex-start;
             gap: 16px 34px;
         }
-        .main__container > .main__description {
+        .main__container > .section {
             flex-flow: row wrap;
             gap: 32px 48px;
             flex: 1 1 50%;
@@ -74,13 +98,15 @@
         .main__container .main__title > .main__sidebar {
             display: none;
         }
-        .menu {
-            width: 100%;
+        .menu__slider {     
+            overflow-x: scroll;
+            overflow-y: none;
+            scrollbar-width: none;
+            margin-right: -16px;
         }
         .main__container > .main__image {
             flex: 1 0 auto;
         }
- 
         .main__image > img {
             width: 100%;
             height: auto;
@@ -90,10 +116,12 @@
     }
 
     @media (min-width: 1120px) {
+        .page, .page > * {
+            width: 100%;
+        }
         .header {
             display: none;
         }
-
         .main__container {
             padding: 42px 32px;
             gap: 16px 34px;
@@ -105,18 +133,17 @@
         .main__title {
             width: 100%;
         }
-        .menu .main__slide-menu {
+        .menu .menu__slider {
             flex-flow: row wrap; 
             justify-content: flex-start;
-            overflow: none;
             margin: 16px 0;
             gap: 16px 16px;
         }
 
-        .menu .main__slide-menu > a {
+        .menu .menu__slider > a {
             flex: 0 1 auto;
         }
-        .main__container > .main__description {
+        .main__container > .section {
             flex-flow: row wrap;
             gap: 32px 48px;
             flex: 1 1 50%;
@@ -134,6 +161,12 @@
             border: 1px solid #f8f8f8;
             border-radius: 5px;
         } 
+        .main__expand-buttons .button-repair {
+            background-image: url(../icons/repair_bigscreen.svg);
+        }
+        .main__expand-buttons .button-checkstatus {
+            background-image: url(../icons/checkstatus_bigscreen.svg);
+        }
         
     }
 
@@ -146,12 +179,25 @@
         background-color: #ffffff;
     }
 
-    .header__menu {
+    .header__items {
         padding: 24px 16px;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .header__divider {
+        width: 2px;
+        height: 32px;
+        border: 1px solid #eaeaea;
+        background-color: #eaeaea;
+        border-radius: 1px;
+    }
+
+    button {
+        border: none;
+        background: none;
     }
 
     .main {
@@ -161,12 +207,12 @@
     .header__main-box, .header__sub-box, .header__second-box {
         display: flex;
         gap: 24px 16px;
+        align-items: center;
     }
 
     .header__second-box {
         justify-content: flex-end;
     }
-
 
     .logo {
         min-width: 97px;
@@ -181,16 +227,34 @@
         margin: 0 auto;
         background: #FF3E79;
         border-radius: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
     }
-
     .logo .round {
         background: none;
     }
-
+    .button-burger {
+        background-image: url(../icons/burder_icon.svg);
+    }
+    .button-callback {
+        background-image: url(../icons/callback.svg);
+    }
+    .button-chat {
+        background-image: url(../icons/chat.svg);
+    }
+    .button-mob {
+        background-image: url(../icons/mob.svg);
+    }
+    .button-repair {
+        background-image: url(../icons/repair_icon.svg);
+    }
+    .button-checkstatus {
+        background-image: url(../icons/checkstatus_icon.svg);
+    }
 
     .divider {
         background: #D9FFF5;
-        width: 320px;
+        width: 100%;
         height: 1px;
     }
 
@@ -212,6 +276,11 @@
     }
 
     .main__highlight {
+        width: 4px;
+        height: 40px;
+        background: #41F6D7;
+        border:rgba(248, 248, 248, 0.0001);
+        border-radius: 0 20px 20px 0;
         position: absolute;
         left: 0;
     }
@@ -220,18 +289,14 @@
         display: flex;
     }
 
-    .main__slide-menu {
+    .menu__slider {
         display: flex;
         gap: 24px 16px;
         margin-top: 24px;  
         margin-bottom: 24px;      
-        overflow-x: scroll;
-        overflow-y: none;
-        scrollbar-width: none;
-        margin-right: -16px;
     }
     
-    .main__slide-menu .main__button {
+    .menu__slider .menu__link {
         flex: 1 0 auto;
         font-weight: 500;
         line-height: 24px;
@@ -243,7 +308,7 @@
         
     }
 
-    .main__fade {
+    .menu__fade {
         right: 0;
         width: 24px;
         height: 40px;
@@ -251,38 +316,24 @@
         background: linear-gradient(270deg, #f8f8f8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
     }
 
-    .main__button--active {
+    .menu__link--active {
         background: #FFFFFF;
         border: 2px solid #B8FFEC;
         border-radius: 6px;
     }
 
-    .main__description {
+    .section {
         display: flex;
         gap: 24px 16px;
         flex: 1 1 auto;
     }
 
-    .main__text .show-more {
-        display: none;
-    }
-
-    .main__read-more > * {
-        display: flex;
-        justify-content: flex-start;
-        align-content: center;
-        flex: 1 0 auto;
-        font-weight: 500;
-    }
-    .read-more {
-        display: none;
-
-    }
-
-    .read-more:checked ~ .main__text .show-more {
-        display: block;
-        margin-top: 24px;
-        
+    .section__expand {
+        width: 132px;
+        background-image: url(../icons/expand.svg);
+        background-repeat: no-repeat;
+        background-position: left;
+        padding-left: 10px;
     }
 
     .main__image {
@@ -299,20 +350,24 @@
         flex: 1 0 auto;
 
     }
-    .main__title > h1, .main__title > .main__sidebar {
+    .main__title > h1, .main__title {
         display: flex;
         gap: 42px 32px;
        
     }
 
-    .main__sidebar-box {
+    .main__expand-buttons {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
         flex: 0 1 auto;
-        gap: 42px 8px;      
+        gap: 42px 32px;
+        font-weight: 500;      
     }
 
-    .main__sidebar-box > h2 {
-        font-weight: 500;
+    .main__expand-button {
+        width: 200px;
+        background-position: 100% 50%;
+        padding-right: 40px;
+        background-repeat: no-repeat;
     }
