@@ -49,9 +49,16 @@
         .main__container {
             padding: 24px 16px;
         }
+<<<<<<< HEAD
         .section__read-more {
             margin-bottom: 24px;
         }
+=======
+        .main__read-more {
+            margin-bottom: 24px;
+        }
+
+>>>>>>> fbda9f6d31dc67922d156acccb4c8f89dba5f51c
         .main__container .main__title > .main__sidebar {
             display: none;
         }
