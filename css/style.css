@@ -60,14 +60,17 @@
         .section__text {
             width: 100%;
         }
+        .menu {
+            width: 100%;
+        }
         .menu__slider {     
             overflow-x: scroll;
             overflow-y: none;
             scrollbar-width: none;
             margin-right: -16px;
         }
-        .menu {
-            width: 100%;
+        .menu__slider::-webkit-scrollbar {
+            display: none;
         }
         .main__image {
             width: 100%;
@@ -101,6 +104,9 @@
             overflow-y: none;
             scrollbar-width: none;
             margin-right: -16px;
+        }
+        .menu__slider::-webkit-scrollbar {
+            display: none;
         }
         .main__container > .main__image {
             flex: 1 0 auto;
