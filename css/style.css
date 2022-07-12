@@ -72,6 +72,9 @@
         .menu__slider::-webkit-scrollbar {
             display: none;
         }
+        .menu__slider::-webkit-scrollbar-thumb {
+            opacity: 0;        
+        }
         .main__image {
             width: 100%;
         }
@@ -107,6 +110,9 @@
         }
         .menu__slider::-webkit-scrollbar {
             display: none;
+        }
+        .menu__slider::-webkit-scrollbar-thumb {
+            opacity: 0;        
         }
         .main__container > .main__image {
             flex: 1 0 auto;
