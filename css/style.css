@@ -19,7 +19,6 @@
     body {
         background: #f2f2f2;
         min-height: 100%;
-        background: blue;
         overflow: hidden;
     }
     .page {
@@ -34,8 +33,7 @@
     @media (min-width: 320px) and (max-width: 767px) {
 
         html, body {
-            width: 100%;
-            
+            width: 100%;   
         }
         .page, .page > * {
             width: 100%;
