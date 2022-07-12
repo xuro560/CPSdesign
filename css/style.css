@@ -80,7 +80,7 @@
         }
     }
 
-    @media (min-width: 768px) and (max-width: 1120px) {
+    @media (min-width: 768px) and (max-width: 1119px) {
         .page, .page > * {
             width: 100%;
         }
@@ -125,7 +125,7 @@
         } 
     }
 
-    @media (min-width: 1120px) {
+    @media (min-width: 1119px) {
         .page, .page > * {
             width: 100%;
         }
@@ -229,7 +229,6 @@
         width: 40px;
         height: 40px;
         margin: 0 auto;
-        background: #FF3E79;
         border-radius: 20px;
         background-repeat: no-repeat;
         background-position: center;
