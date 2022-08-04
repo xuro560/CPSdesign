@@ -506,10 +506,15 @@
         background: #FFFFFF;
         display: flex;
         flex-flow: column wrap;
+        align-content: space-between;
+        gap: 32px 0;
         box-shadow: 16px 0 52px #0E185033;
         position: absolute;
         top: 0;
         left: 0;
+    }
+    .mobile-menu > * {
+        width: 100%;
     }
 
     .mobile-header {
@@ -530,35 +535,64 @@
     .mobile-header .button-search.round {
         margin: 0;
     }
+
     .mobile-navigation {
+        display: flex;
         flex: 1 0 auto;
     }
 
-
-    .mobile-navigation ul {
+    .list {
         display: flex;
         flex-flow: column wrap;
-        padding: 24px;
-        gap: 32px 24px;
         list-style-type: none;
     }
+    .list__item {
+        padding: 16px 24px;
+        position: relative;
+    }
 
-    .mobile-navigation .link {
+    .round:hover {
+        opacity: 0.5;
+        transition-duration: 200ms;
+
+    }
+    .round:active {
+        transform: scale(1.1);
+    }
+
+    .active {
         padding: 0;
         font-size: 16px;
         line-height: 24px;
         letter-spacing: -0.2px;
-        color: #1B1C21;
+        color: #1B1C21; 
+    }
+    .active:focus {
+        color:rgba(126, 126, 130, 0.5);
+        transition-duration: 100ms;
     }
 
-    .mobile-navigation li {
-        position: relative;
-        margin-top: 6px;
+    .link:focus::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 32px;
+        width: 4px;
+        border: 1px solid #41F6D7;
+        border-radius: 0 4px 4px 0;
+        background: #41F6D7;
+        margin-right: 20px;
+        transition-duration: 500ms;
     }
 
-    .link--active:hover {
-        filter: opacity(0.5);
+    .active:hover {
+        color:rgba(126, 126, 130, 0.5);
+        transition-duration: 100ms;
     }
+    .active:active {
+        color: #41F6D7;
+    }
+    
     
 
     .mobile-footer {
@@ -566,7 +600,7 @@
         flex-flow: column wrap;
         justify-content: flex-start;
         flex: 0 0 auto;
-        margin: 24px;
+        padding: 32px 24px;
         gap: 16px;
         
     }
