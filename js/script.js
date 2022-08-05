@@ -5,10 +5,9 @@
     let text = document.querySelector('.section__text');
     let description = document.querySelector('.section__description');
     let newSize = imageHeight - expandTextButtonHeight;
-    if (description.offsetHeight > newSize) {
-        description.classList.add('hide');
-        description.classList.add('description-size');
-    }
+  
+    description.classList.add('hide');
+    description.classList.add('description-size');
 
     expandTextButton.onclick = function() {
         description.classList.toggle('hide');
