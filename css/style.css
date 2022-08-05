@@ -13,13 +13,13 @@
         font-family: 'TT Lakes', sans-serif;
         box-sizing: border-box;
         height: 100%;
-        overflow: hidden;
+        overflow-x: hidden;
     }
     
     body {
         background: #f2f2f2;
         min-height: 100%;
-        overflow: hidden;
+        overflow-x: hidden;
         --padding: 16px;
         --main-image: max-content;
     }
