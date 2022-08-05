@@ -132,6 +132,9 @@
         .description-size {
             max-height: 150px;
         }
+        .menu {
+            width: 100%;
+        }
 
         .menu__slider {     
             overflow-x: scroll;
