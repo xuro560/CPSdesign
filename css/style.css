@@ -560,19 +560,19 @@
         transform: scale(1.1);
     }
 
-    .active {
+    .link {
         padding: 0;
         font-size: 16px;
         line-height: 24px;
         letter-spacing: -0.2px;
         color: #1B1C21; 
     }
-    .active:focus {
+    .link:focus {
         color:rgba(126, 126, 130, 0.5);
         transition-duration: 100ms;
     }
 
-    .link:focus::before {
+    .active:focus::before {
         content: '';
         position: absolute;
         left: 0;
@@ -585,11 +585,11 @@
         transition-duration: 500ms;
     }
 
-    .active:hover {
+    .link:hover {
         color:rgba(126, 126, 130, 0.5);
         transition-duration: 100ms;
     }
-    .active:active {
+    .link:active {
         color: #41F6D7;
     }
     
