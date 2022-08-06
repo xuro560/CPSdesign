@@ -1,6 +1,5 @@
     let expandTextButton = document.querySelector('.section__button');
     let description = document.querySelector('.section__description');
-
     description.classList.add('hide');
     description.classList.add('description-size');
 
@@ -21,7 +20,7 @@
 
     if (window.innerWidth < 767) {
 
-        let swiper = new Swiper('.tabs-swiper', {
+        new Swiper('.tabs-swiper', {
             slidesPerView: 'auto',
             spaceBetween: 16,
             pagination: {
