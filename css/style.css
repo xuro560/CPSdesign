@@ -13,13 +13,13 @@
         font-family: 'TT Lakes', sans-serif;
         box-sizing: border-box;
         height: 100%;
-        overflow: hidden;
+        overflow-x: hidden;
     }
     
     body {
         background: #f2f2f2;
         min-height: 100%;
-        overflow: hidden;
+        overflow-x: hidden;
         --padding: 16px;
         --main-image: max-content;
     }
@@ -91,6 +91,9 @@
             padding: var(--padding);
             gap: 0 16px;
         }
+        .tabs {
+            padding-top: 0;
+        }
 
     }
 
@@ -111,12 +114,16 @@
         .main__container .main__title > .main__expand-buttons    {
             display: none;
         }
+        .menu {
+            width: 100%;
+        }
         .main__container .section  {
             flex-flow: row nowrap;
             justify-content: space-between;
             align-content: flex-start;
             flex: 0 0 100%;
         }
+        
         .section__text, .section__image {
             flex: 0 1 100%;
             font-size: 14px;
@@ -149,7 +156,10 @@
             padding: calc(var(--padding) + var(--padding) / 2);
             gap: 0 24px;
         }
-        .tabs .tab {
+        .tabs {
+            padding-top: 0;
+        }
+        .tabs-wrapper .tabs-container {
             width: 224px;
         }
     }
@@ -210,6 +220,9 @@
         .tabs, .software__title {
             padding: calc(var(--padding) * 2);
             gap: 0 32px;
+        }
+        .tabs {
+            padding-top: 0;
         }
         
     }
@@ -343,11 +356,11 @@
         display: flex;
         gap: 24px 16px;
         margin-top: 24px;  
-        margin-bottom: 24px;      
+        margin-bottom: 24px;
     }
     
     .link {
-        flex: 1 0 auto;
+        display: block;
         font-weight: 500;
         line-height: 24px;
         letter-spacing: -0.2px;
@@ -370,6 +383,7 @@
         background: #FFFFFF;
         border: 2px solid #B8FFEC;
         border-radius: 6px;
+        
     }
 
     .section {
@@ -436,6 +450,7 @@
     }
 
     .main__expand-button {
+        cursor: pointer;
         width: 200px;
         height: 40px;
         background-position: 100% 50%;
@@ -443,11 +458,29 @@
         background-repeat: no-repeat;
     }
 
+    .main__expand-button:hover {
+        color:rgba(126, 126, 130, 0.5);
+        transition-duration: 200ms;
+    }
+    .main__expand-button:focus {
+        color:rgba(126, 126, 130, 0.7);
+        transition-duration: 300ms;
+
+    }
+    .main__expand-button:active {
+        color: #41F6D7;
+        transition-duration: 300ms;
+
+    }
+
     .software {
         display: flex;
-        flex-flow: column wrap;
+        flex-flow: row wrap;
+        position: relative;
     }
     .software__title {
+        display: flex;
+        flex: 1 0 100%;
         font-size: 16px;
         line-height: 24px;
         letter-spacing: -0.2px;
@@ -459,18 +492,24 @@
         font-weight: 400;
     }
     .tabs {
+        width: 100%;
+        
+    }
+    .tabs-wrapper {
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: flex-start;        
         gap: 16px 24px;
-        counter-reset: amount;
-
     }
-    .tab {
-        counter-increment: amount;
+    .tabs-container {
+        cursor: pointer;
         width: 240px;
         height: 72px;
+    }
+    
+    .tab {
+        width: 100%;
+        height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -480,8 +519,14 @@
         border: 1px solid #EAEAEA;
         border-radius: 6px;
     }
+
+    .tabs__button {
+        margin-top: 24px;
+    }
+    
     .tab-hide {
         display: none;
+        transition-duration: 300ms;
     }
     .section__description {
         display: flex;
@@ -558,21 +603,21 @@
     }
     .round:active {
         transform: scale(1.1);
+        transition-duration: 200ms;
     }
 
-    .active {
-        padding: 0;
+    .link {
         font-size: 16px;
         line-height: 24px;
         letter-spacing: -0.2px;
         color: #1B1C21; 
     }
-    .active:focus {
+    .link:focus {
         color:rgba(126, 126, 130, 0.5);
         transition-duration: 100ms;
     }
 
-    .link:focus::before {
+    .active:focus::before {
         content: '';
         position: absolute;
         left: 0;
@@ -585,11 +630,11 @@
         transition-duration: 500ms;
     }
 
-    .active:hover {
+    .link:hover {
         color:rgba(126, 126, 130, 0.5);
         transition-duration: 100ms;
     }
-    .active:active {
+    .link:active {
         color: #41F6D7;
     }
     
@@ -632,4 +677,70 @@
     .mobile-footer__lang {
         margin-top: 40px;
         text-transform: uppercase;
+    }
+
+    /* *****************подключаем свайпер************ */
+
+    .tabs-swiper {
+        min-width: 0;
+        box-sizing:border-box;
+        padding: 16px;
+        position: relative;
+        display: flex;
+        flex-flow: column wrap;
+        
+    }
+    .tabs-swiper * {
+        box-sizing:border-box;
+
+    }
+    
+    .swiper-wrapper.tabs-swiper__wrapper {
+        display: flex;
+        min-width: 0;
+        flex-flow: row nowrap;
+        margin-bottom: 32px;
+
+    }
+    .software::after {
+        display: block;
+        content: '';
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 0;
+        width: 24px;
+        bottom: 72px;
+        background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+        z-index: 9999;
+    }
+    
+    .tabs-swiper__slide {
+        width: auto;
+    }
+
+    .tabs-swiper__tab {
+        box-sizing:border-box;
+        cursor: pointer;
+        counter-increment: amount;
+        width: 240px;
+        height: 72px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+        gap: 16px;
+        background: #FFFFFF;
+        border: 1px solid #EAEAEA;
+        border-radius: 6px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        background: #DDDDDD;
+        opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+        background: #B5B6BC;
     }
