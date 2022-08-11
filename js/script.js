@@ -13,9 +13,6 @@
     let windowWidth = window.innerWidth;
     let tabsWidth = swiper.offsetWidth;
 
-    description.classList.add('hide');
-    description.classList.add('description-size');
-
     expandTextButton.addEventListener( 'click', function() {
         
         description.classList.toggle('hide');
@@ -58,7 +55,7 @@
 
 
     //tab & desktop window
-    } else if ( windowWidth > 768 ) {
+    } else if ( windowWidth > 767 ) {
         
         swiper.classList.toggle('swiper');
         swiperWrapper.classList.toggle('swiper-wrapper');
